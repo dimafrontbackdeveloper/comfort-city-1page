@@ -1,0 +1,426 @@
+@import './variables';
+
+// миксины
+@import './_mixins.scss';
+
+// обнуление стилей
+@import './reset.scss';
+
+// контейнер
+@import './container.scss';
+
+// оболочка
+@import './wrapper.scss';
+
+// контент
+@import './content.scss';
+
+// шрифты
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@font-face {font-family: "SF Pro Rounded"; src: url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.eot"); src: url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.woff") format("woff"), url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ead4092f880f75ff0883ced1856b2c37.svg#SF Pro Rounded") format("svg"); }
+
+// глобальные стили
+@import './global.scss';
+
+
+.intro {
+   // padding-top: 91px;
+
+   @include breakpoint(567px){
+      padding-top: 0px;
+   }
+
+   figure{
+      position: relative;
+
+      img{
+         @include adaptiv-value('min-height',985,370,0);
+         max-height: 100vh;
+
+         @include breakpoint(425px){
+            width: 130%;
+            max-width: none;
+         }
+      }
+   }
+
+   // .intro__block
+
+   &__block{
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         @include adaptiv-value('padding-top',70,20,0);
+         @include adaptiv-value('padding-right',100,20,0);
+         @include adaptiv-value('padding-bottom',20,20,0);
+         @include adaptiv-value('padding-left',115,20,0);
+         background: linear-gradient(95.23deg, rgba(38, 38, 62, 0.38) -1%, rgba(38, 38, 62, 0.33) 100%);
+         backdrop-filter: blur(25px);
+         border-radius: 0px 20px 0px 0px;
+         z-index: 2;
+         
+
+         @include breakpoint(768px){
+            width: 100%;
+            border-radius:0px;
+
+         }
+
+         h3{
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            @include adaptiv-value('font-size',34,16,0);
+            @include adaptiv-value('line-height',34,19,0);
+            color:$primary;
+            @include adaptiv-value('margin-bottom',10,1,0);
+         }
+
+         h2{
+         font-weight: 700;
+         @include adaptiv-value('font-size',53,20,0);
+         @include adaptiv-value('line-height',64,32,0);
+         color: #FFFFFF;
+         @include adaptiv-value('margin-bottom',30,1,0);
+         }
+
+         p{
+            @include adaptiv-value('font-size',20,12,0);
+            line-height: 30px;
+            
+
+            &::before{
+               content: '';
+               display: block;
+               @include adaptiv-value('width',18,13,0);
+               @include adaptiv-value('height',24,18,0);
+               @include adaptiv-value('margin-right',10,8,0);
+               background-image: url('./../images/point.svg');
+               background-size: cover;
+               background-repeat: no-repeat;
+            }
+
+            span{
+            color: #FFFFFF;
+            opacity: 0.8;
+
+            }
+         }
+   }
+
+}
+
+.about {
+   position: relative;
+   @include adaptiv-value('padding-top',130,50,0);
+   @include adaptiv-value('padding-bottom',100,90,0);
+   background: linear-gradient(180deg, #26263E 14.11%, #12121E 100%);
+
+   // .about__container
+
+   &__container{
+      max-width: 1220px;
+   }
+
+   // .about__img1
+   
+   &__img{
+      position: absolute;
+ 
+   }
+
+   // .about__img-bottom
+
+   &__img-bottom{
+      bottom: 0;
+   }
+
+   // .about__img1
+
+   &__img1 {
+   @include adaptiv-value('width',370,125,0);
+      top: 60px;
+      right: 0;
+
+      @include breakpoint(1024px){
+         transform: translateX(50%)
+      }
+
+      @include breakpoint(768px){
+         top: 0;
+      }
+   }
+
+   // .about__img2
+
+   &__img2 {
+   @include adaptiv-value('width',520,125,0);
+      top: 350px;
+
+      @include breakpoint(1024px){
+         display: none;
+      }
+   }
+
+   h2{
+   @include adaptiv-value('padding-top',15,6,0);
+   @include adaptiv-value('padding-right',25,16,0);
+   @include adaptiv-value('padding-bottom',15,6,0);
+   @include adaptiv-value('padding-left',25,16,0);
+      background: $primary;
+   @include adaptiv-value('border-radius',10,15,0);
+   @include adaptiv-value('margin-bottom',70,45,0);
+      color: #26263E;
+
+      @include breakpoint(768px){
+         display: flex;
+         justify-content: center;
+      }
+   }
+
+   p{
+      color:#fff;
+      opacity: 0.9;
+
+      &:first-of-type{
+         @include adaptiv-value('margin-bottom',30,20,0);
+      }
+
+      &:last-of-type{
+         @include adaptiv-value('margin-bottom',100,35,0);
+      }
+   }
+
+   // .about__column-block
+
+   &__column-block {
+      @include adaptiv-value('margin-top',70,30,0);
+      @include adaptiv-value('margin-bottom',70,30,0);
+      @include adaptiv-value('padding-right',75,17,0);
+      @include adaptiv-value('padding-bottom',45,20,0);
+      @include adaptiv-value('padding-left',55,17,0);
+      background: $primary;
+      border-radius: 20px;
+
+      @include breakpoint(768px){
+         flex-wrap: wrap;
+      }
+   }
+
+   // .about__column-item
+
+   &__column-item {
+      @include breakpoint(768px){
+         width: 100%;
+      }
+
+      &:first-child{
+         margin-right: 30px;
+         flex-grow: 0;
+flex-shrink: 0;
+@include adaptiv-value('flex-basis',170,90,0);
+
+         @include breakpoint(768px){
+            margin-right: 0px;
+            margin: 0 auto;
+         }
+      }
+
+      &:last-child{
+      @include adaptiv-value('padding-top',40,20,0);
+
+            strong{
+               font-weight: bold;
+            }
+      }
+   }
+
+   .btn{
+      display: block;
+      margin: 0 auto;
+
+      &:hover{
+         background: $primary;
+         transform: scale(105%);
+      }
+   }
+
+   // .about__img3
+
+   &__img3 {
+   @include adaptiv-value('width',100,25,0);
+   @include adaptiv-value('left',130,3,0);
+   }
+
+   // .about__img4
+
+   &__img4 {
+   @include adaptiv-value('width',155,40,0);
+   @include adaptiv-value('left',380,40,0);
+   }
+
+   // .about__img5
+
+   &__img5 {
+   @include adaptiv-value('width',50,13,0);
+   @include adaptiv-value('left',630,135,0);
+   }
+
+   // .about__img6
+
+   &__img6 {
+   @include adaptiv-value('width',80,20,0);
+   @include adaptiv-value('left',700,150,0);
+   }
+
+   // .about__img7
+
+   &__img7 {
+   @include adaptiv-value('width',90,22,0);
+   @include adaptiv-value('right',650,100,0);
+   }
+
+   // .about__img8
+
+   &__img8 {
+   @include adaptiv-value('width',180,45,0);
+   @include adaptiv-value('right',390,35,0);
+   }
+
+   // .about__img9
+
+   &__img9 {
+   @include adaptiv-value('width',120,32,0);
+   @include adaptiv-value('right',180,-10,0);
+   }
+}
+
+.houses {
+   @include adaptiv-value('padding-top',180,35,0);
+
+   .swiper-slide{
+      border: 2px solid $primary;
+
+      @include breakpoint(768px){
+      border: 1px solid $primary;
+      }
+   }
+
+   // .houses__container
+
+   &__container {
+   @include adaptiv-value('padding-left',260,25,0);
+
+   @include breakpoint(425px){
+      padding-left: 25px;
+   }
+   }
+   
+   // .houses__row
+
+   &__row{
+      @include adaptiv-value('margin-bottom',170,30,0);
+
+      &:last-child{
+         margin-bottom: 0px;
+      }
+   }
+
+   .title {
+      @include adaptiv-value('margin-bottom',65,25,0);
+   
+      // .title__line
+   
+      &__line {
+      }
+   }
+}
+
+.our {
+
+   // .our__row
+
+   &__row {
+      grid-template-areas: 
+      'a b'
+      ;
+
+      @include breakpoint(768px){
+         padding-top: 60px;
+
+         grid-template-areas: 
+         'b'
+         'a'
+         ;
+      }
+   }
+
+   // .our__column
+
+   &__column {
+      &:first-child{
+         grid-area: a;
+      }
+
+      &:last-child{
+         grid-area: b;
+         margin-left: -200px;
+        max-width: 735px;
+
+        
+        @include breakpoint(1440px){
+         margin-left: -150px;
+
+      }
+
+         @include breakpoint(1024px){
+            margin-left: 0;
+         }
+
+
+         @include breakpoint(768px){
+            @include adaptiv-value('padding-left',260,25,0);
+            padding-right:20px ;
+         }
+      }
+   }
+
+   .title {
+      @include adaptiv-value('margin-bottom',30,15,0);
+
+      // .title__line
+   
+      &__line {
+      }
+   }
+
+   p{
+      
+      b{
+         color:$primary;
+      }
+   }
+}
+
+.contact{
+      margin-top: -150px;
+
+      @include breakpoint(1440px){
+         margin-top: -100px;
+      }
+
+   @include breakpoint(1024px){
+      margin-top: -50px;
+   }
+
+   .contact-description{
+      max-width: 640px;
+   }
+
+   h3{
+      margin-bottom: 10px;
+   }
+
+   p{
+      margin-bottom: 50px;
+   }
+}
